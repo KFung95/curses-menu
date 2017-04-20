@@ -24,4 +24,4 @@ Instructions to run on Windows:
 1. Visit http://www.lfd.uci.edu/~gohlke/pythonlibs/#curses
 2. Download the correct version of curses (Ex: "curses‑2.2‑cp36‑cp36m‑win32.whl" for Python 3.6 32-bit)
 3. On command line, change directory to your download location
-4. Run command "pip install [INSERT FILE NAME HERE]" (Ex: "pip install curses‑2.2‑cp36‑cp36m‑win32.whl"
+4. Run command "pip install [INSERT FILE NAME HERE]" (Ex: "pip install curses‑2.2‑cp36‑cp36m‑win32.whl")
