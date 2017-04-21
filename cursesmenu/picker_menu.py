@@ -7,31 +7,40 @@ class PickerMenu(CursesMenu):
     A menu that simplifies item creation, just give it a list of strings and it builds the menu for you
     """
 
-    def __init__(self, options, title=None, subtitle=None, show_exit_option=True):
+    def __init__(self, options, title=None, subtitle="Space = toggle, Enter = accept, q = quit", show_exit_option=False):
         """
         :ivar list[str] options: The list of strings this menu should be built from
         """
-        arrow = "-->"
-        footer = "Space = toggle, Enter = accept, q = cancel"
-        more = "..."
-        border = "||--++++"
-        c_selected = "[X]"
-        c_empty = "[ ]"
-        aborted = False
-
         super(PickerMenu, self).__init__(title, subtitle, show_exit_option)
-
-        self.title = title
-        self.arrow = arrow
-        self.footer = footer
-        self.more = more
-        self.border = border
-        self.c_selected = c_selected
-        self.c_empty = c_empty
-        self.aborted = aborted
-
-        self.all_options = []
         for option in options:
-            self.all_options.append(PickerItem(option, False, self))  # May need to override append_item
-        self.length = len(self.all_options)
+            self.append_item(PickerItem(option, self))
+
+    @classmethod
+    def get_selection(cls, options, title, subtitle, exit_option=False, _menu=None):
+        """
+        Single-method way of getting a selection out of a list of strings
+
+        :param list[str] strings: the list of string used to build the menu
+        :param list _menu: should probably only be used for testing, pass in a list and the created menu used \
+        internally by the method will be appended to it
+        """
+        menu = cls(options, title, subtitle, exit_option)
+        if _menu is not None:
+            _menu.append(menu)
+        menu.show()
+        menu.join()
+        return menu.selected_option
+
+    def gather_selections(self):
+        """
+        A method that returns all of the base text values of selected options in a list
+        :return: results
+        :rtype: list
+        """
+        results = []
+        for option in self.items:
+            if option.selected:
+                results.append(option.text.replace("[X] ", ""))
+        return results
+
 
