@@ -20,10 +20,10 @@ class PickerItem(MenuItem):
         """
         if self.selected:
             self.selected = False
-            self.text.replace("[X] ", "[ ] ")
+            self.text = self.text.replace("[X] ", "[ ] ")
         else:
             self.selected = True
-            self.text.replace("[ ] ", "[X] ")
+            self.text = self.text.replace("[ ] ", "[X] ")
 
     def get_return(self):
         """
