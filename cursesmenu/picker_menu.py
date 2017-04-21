@@ -43,4 +43,10 @@ class PickerMenu(CursesMenu):
                 results.append(option.text.replace("[X] ", ""))
         return results
 
+    @staticmethod
+    def is_picker():
+        """
+        Returns True for PickerMenu
+        """
+        return True
 

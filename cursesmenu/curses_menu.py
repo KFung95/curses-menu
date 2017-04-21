@@ -336,7 +336,10 @@ class CursesMenu(object):
         self.selected_item.set_up()
         self.selected_item.action()
         self.selected_item.clean_up()
-        self.returned_value = self.selected_item.get_return()
+        if self.is_picker():
+            self.returned_value = self.get_selections()
+        else:
+            self.returned_value = self.selected_item.get_return()
         self.should_exit = self.selected_item.should_exit
 
         if not self.should_exit:
@@ -359,6 +362,21 @@ class CursesMenu(object):
         Clear the screen belonging to this menu
         """
         self.screen.clear()
+
+    @staticmethod
+    def is_picker():
+        """
+        Return false for all menu types, except for PickerMenu
+        """
+        return False
+
+    @abc.abstractmethod
+    def get_selections(self):
+        """
+        Abstract method in place for PickerMenu.get_selections()
+        :return: 
+        """
+        return
 
 
 class MenuItem(object):
@@ -422,6 +440,9 @@ class MenuItem(object):
 
     @abc.abstractmethod
     def toggle_selection(self):
+        """
+        Abstract method in place for PickerItem.toggle_selection()
+        """
         return
 
 
