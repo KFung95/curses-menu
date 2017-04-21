@@ -2,6 +2,7 @@ import curses
 import os
 import platform
 import threading
+import abc
 
 
 class CursesMenu(object):
@@ -287,6 +288,13 @@ class CursesMenu(object):
             self.go_up()
         elif user_input == ord("\n"):
             self.select()
+        elif user_input == ord(" "):
+            self.current_item.toggle_selection()
+            self.draw()
+        elif user_input == ord("q"):
+            self.exit()
+
+        # Add more user inputs (Space for toggle, etc)
 
         return user_input
 
@@ -411,6 +419,10 @@ class MenuItem(object):
         Otherwise just returns the same value the last selected item did.
         """
         return self.menu.returned_value
+
+    @abc.abstractmethod
+    def toggle_selection(self):
+        return
 
 
 class ExitItem(MenuItem):
