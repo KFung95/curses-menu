@@ -7,7 +7,7 @@ class SelectionMenu(CursesMenu):
     A menu that simplifies item creation, just give it a list of strings and it builds the menu for you
     """
 
-    def __init__(self, strings, title=None, subtitle=None, show_exit_option=True):
+    def __init__(self, strings, title=None, subtitle="Select an option", show_exit_option=True):
         """
         :ivar list[str] strings: The list of strings this menu should be built from
         """
@@ -16,7 +16,7 @@ class SelectionMenu(CursesMenu):
             self.append_item(SelectionItem(item, index, self))
 
     @classmethod
-    def get_selection(cls, strings, title="Select an option", subtitle=None, exit_option=True, _menu=None):
+    def get_selection(cls, strings, title, subtitle=None, exit_option=True, _menu=None):
         """
         Single-method way of getting a selection out of a list of strings
 
