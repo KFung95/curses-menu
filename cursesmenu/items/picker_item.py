@@ -12,6 +12,7 @@ class PickerItem(MenuItem):
         """
         super(PickerItem, self).__init__(text=text, menu=menu, should_exit=True)
         self.selected = selected
+        self.text = "[ ] " + self.text
 
     def toggle_selection(self):
         """
@@ -19,8 +20,10 @@ class PickerItem(MenuItem):
         """
         if self.selected:
             self.selected = False
+            self.text.replace("[X] ", "[ ] ")
         else:
             self.selected = True
+            self.text.replace("[ ] ", "[X] ")
 
     def get_return(self):
         """
