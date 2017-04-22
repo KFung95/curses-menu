@@ -25,3 +25,8 @@ Instructions to run on Windows:
 2. Download the correct version of curses (Ex: "curses‑2.2‑cp36‑cp36m‑win32.whl" for Python 3.6 32-bit)
 3. On command line, change directory to your download location
 4. Run command "pip install [INSERT FILE NAME HERE]" (Ex: "pip install curses‑2.2‑cp36‑cp36m‑win32.whl")
+
+Run instructions:
+1. Navigate to your curses-menu directory via terminal or command line
+2. Type "python curses_menu_implementation.py"
+3. Hit enter
