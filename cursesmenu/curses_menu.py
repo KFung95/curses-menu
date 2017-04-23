@@ -289,10 +289,12 @@ class CursesMenu(object):
         elif user_input == ord("\n"):
             self.select()
         elif user_input == ord(" "):
-            self.current_item.toggle_selection()
-            self.draw()
+            if self.is_picker():
+                self.current_item.toggle_selection()
+                self.draw()
         elif user_input == ord("q"):
-            self.exit()
+            if self.is_picker():
+                self.exit()
 
         # Add more user inputs (Space for toggle, etc)
 
