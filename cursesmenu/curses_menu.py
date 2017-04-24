@@ -373,7 +373,7 @@ class CursesMenu(object):
         return False
 
     @abc.abstractmethod
-    def get_selections(self):
+    def gather_selections(self):
         """
         Abstract method in place for PickerMenu.get_selections()
         :return: 
