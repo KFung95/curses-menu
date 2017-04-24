@@ -402,7 +402,6 @@ class MenuItem(object):
         :ivar bool should_exit: Whether the menu should exit once this item's action is done
         """
         self.text = text
-        self.color = color
         self.menu = menu
         self.should_exit = should_exit
 
