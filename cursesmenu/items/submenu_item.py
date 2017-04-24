@@ -8,11 +8,11 @@ class SubmenuItem(MenuItem):
     A menu item to open a submenu
     """
 
-    def __init__(self, text, submenu, menu=None, should_exit=False):
+    def __init__(self, color, text, submenu, menu=None, should_exit=False):
         """
         :ivar CursesMenu self.submenu: The submenu to be opened when this item is selected
         """
-        super(SubmenuItem, self).__init__(text=text, menu=menu, should_exit=should_exit)
+        super(SubmenuItem, self).__init__(color=color, text=text, menu=menu, should_exit=should_exit)
 
         self.submenu = submenu
         if menu:

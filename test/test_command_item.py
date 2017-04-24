@@ -1,6 +1,5 @@
 import os.path
 import platform
-
 from cursesmenu import CursesMenu
 
 try:

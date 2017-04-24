@@ -6,11 +6,11 @@ class SelectionItem(MenuItem):
     The item type used in :class:`cursesmenu.SelectionMenu`
     """
 
-    def __init__(self, text, index, menu=None):
+    def __init__(self, color, text, index, menu=None):
         """
         :ivar int index: The index of this item in the list used to initialize the :class:`cursesmenu.SelectionMenu`
         """
-        super(SelectionItem, self).__init__(text=text, menu=menu, should_exit=True)
+        super(SelectionItem, self).__init__(color=color, text=text, menu=menu, should_exit=True)
         self.index = index
 
     def get_return(self):

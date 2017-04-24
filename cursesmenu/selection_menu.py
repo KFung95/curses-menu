@@ -13,7 +13,7 @@ class SelectionMenu(CursesMenu):
         """
         super(SelectionMenu, self).__init__(title, subtitle, show_exit_option)
         for index, item in enumerate(strings):
-            self.append_item(SelectionItem(item, index, self))
+            self.append_item(SelectionItem("WHITE", item, index, self))
 
     @classmethod
     def get_selection(cls, strings, title, subtitle=None, exit_option=True, _menu=None):

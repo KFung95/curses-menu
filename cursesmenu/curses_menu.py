@@ -210,7 +210,7 @@ class CursesMenu(object):
             if self.current_option == index:
                 text_style = self.highlight
             else:
-                text_style = self.normal
+                text_style = curses.color_pair(item.get_color())
             self.screen.addstr(5 + index, 4, item.show(index), text_style)
 
         screen_rows, screen_cols = CursesMenu.stdscr.getmaxyx()
@@ -395,12 +395,13 @@ class MenuItem(object):
     A generic menu item
     """
 
-    def __init__(self, text, menu=None, should_exit=False):
+    def __init__(self, color, text, menu=None, should_exit=False):
         """
         :ivar str text: The text shown for this menu item
         :ivar CursesMenu menu: The menu to which this item belongs
         :ivar bool should_exit: Whether the menu should exit once this item's action is done
         """
+        self.color = color
         self.text = text
         self.menu = menu
         self.should_exit = should_exit
@@ -456,14 +457,31 @@ class MenuItem(object):
         """
         return
 
+    def get_color(self):
+        if self.color == "RED":
+            return 2
+        elif self.color == "GREEN":
+            return 3
+        elif self.color == "YELLOW":
+            return 4
+        elif self.color == "BLUE":
+            return 5
+        elif self.color == "MAGENTA":
+            return 6
+        elif self.color == "CYAN":
+            return 7
+        elif self.color == "WHITE":
+            return 8
+        else:
+            return 8
 
 class ExitItem(MenuItem):
     """
     Used to exit the current menu. Handled by :class:`cursesmenu.CursesMenu`
     """
 
-    def __init__(self, text="Exit", menu=None):
-        super(ExitItem, self).__init__(text=text, menu=menu, should_exit=True)
+    def __init__(self, color="WHITE", text="Exit", menu=None):
+        super(ExitItem, self).__init__(color=color, text=text, menu=menu, should_exit=True)
 
     def show(self, index):
         """

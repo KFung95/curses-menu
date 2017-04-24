@@ -11,9 +11,9 @@ class ExternalItem(MenuItem):
     Should probably be subclassed.
     """
 
-    def __init__(self, text, menu=None, should_exit=False):
+    def __init__(self, color, text, menu=None, should_exit=False):
         # Here so Sphinx doesn't copy extraneous info from the superclass's docstring
-        super(ExternalItem, self).__init__(text=text, menu=menu, should_exit=should_exit)
+        super(ExternalItem, self).__init__(color=color, text=text, menu=menu, should_exit=should_exit)
 
     def set_up(self):
         """
