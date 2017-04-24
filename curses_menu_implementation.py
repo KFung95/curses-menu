@@ -19,30 +19,16 @@ command_item = CommandItem("YELLOW", "Run a console command",  "touch hello.txt"
 # A SelectionMenu constructs a menu from a list of strings
 selection_menu = SelectionMenu(["item1", "item2", "item3"])
 
-<<<<<<< HEAD
 # A SubmenuItem lets you add a menu (the selection_menu above, for example)
 # as a submenu of another menu
 submenu_item = SubmenuItem("MAGENTA", "Submenu Item (Selection Menu)", selection_menu, menu)
-=======
-# A SubmenuItem lets you add a menu (the selection_menu above, for example) as a submenu of another menu
-submenu_item = SubmenuItem("Submenu Item (Selection Menu)", selection_menu, menu)
->>>>>>> origin/master
 
-# A PickerMenu constructs a menu from a list of strings
+# A SelectionMenu constructs a menu from a list of strings
 picker_menu = PickerMenu(["file1", "file2", "file3"])
 
-<<<<<<< HEAD
 # A SubmenuItem lets you add a menu (the selection_menu above, for example)
 # as a submenu of another menu
 picker_submenu_item = SubmenuItem("BLUE", "Submenu Item (Picker Menu)", picker_menu, menu)
-=======
-# A SubmenuItem lets you add a menu (the picker_menu above, for example) as a submenu of another menu
-picker_submenu_item = SubmenuItem("Submenu Item (Picker Menu)", picker_menu, menu)
-
-#Color Changer
-color_change_menu = SelectionMenu(["RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE"])
-color_change_sub = SubmenuItem("Color Change", color_change_menu, menu)
->>>>>>> origin/master
 
 # Once we're done creating them, we just add the items to the menu
 menu.append_item(menu_item)
