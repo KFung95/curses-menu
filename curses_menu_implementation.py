@@ -14,7 +14,7 @@ menu_item = MenuItem("RED", "Menu Item")
 function_item = FunctionItem("GREEN", "Call a Python function", input, ["Enter an input: "])
 
 # A CommandItem runs a console command
-command_item = CommandItem("YELLOW", "Run a console command",  "touch hello.txt")
+command_item = CommandItem("YELLOW", "Run a console command 'Python'", "python")
 
 # A SelectionMenu constructs a menu from a list of strings
 selection_menu = SelectionMenu(["item1", "item2", "item3"])
