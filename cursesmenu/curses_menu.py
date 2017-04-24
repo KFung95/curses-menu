@@ -341,7 +341,7 @@ class CursesMenu(object):
         self.selected_item.action()
         self.selected_item.clean_up()
         if self.is_picker():
-            self.returned_value = self.get_selections()
+            self.returned_value = self.gather_selections()
         else:
             self.returned_value = self.selected_item.get_return()
         self.should_exit = self.selected_item.should_exit
@@ -402,6 +402,7 @@ class MenuItem(object):
         :ivar bool should_exit: Whether the menu should exit once this item's action is done
         """
         self.text = text
+        self.color = color
         self.menu = menu
         self.should_exit = should_exit
 
