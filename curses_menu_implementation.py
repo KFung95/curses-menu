@@ -30,12 +30,17 @@ picker_menu = PickerMenu(["file1", "file2", "file3"])
 # as a submenu of another menu
 picker_submenu_item = SubmenuItem("Submenu Item (Picker Menu)", picker_menu, menu)
 
+#Color Changer
+color_change_menu = SelectionMenu(["RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE"])
+color_change_sub = SubmenuItem("Color Change", color_change_menu, menu)
+
 # Once we're done creating them, we just add the items to the menu
 menu.append_item(menu_item)
 menu.append_item(function_item)
 menu.append_item(command_item)
 menu.append_item(submenu_item)
 menu.append_item(picker_submenu_item)
+menu.append_item(color_change_sub)
 
 # Finally, we call show to show the menu and allow the user to interact
 menu.show()
