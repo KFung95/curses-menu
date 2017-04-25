@@ -473,14 +473,14 @@ class MenuItem(object):
         elif self.color == "WHITE":
             return 8
         else:
-            return 8
+            return 0
 
 class ExitItem(MenuItem):
     """
     Used to exit the current menu. Handled by :class:`cursesmenu.CursesMenu`
     """
 
-    def __init__(self, color="WHITE", text="Exit", menu=None):
+    def __init__(self, color="NORMAL", text="Exit", menu=None):
         super(ExitItem, self).__init__(color=color, text=text, menu=menu, should_exit=True)
 
     def show(self, index):

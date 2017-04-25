@@ -13,7 +13,7 @@ class PickerMenu(CursesMenu):
         """
         super(PickerMenu, self).__init__(title, subtitle, show_exit_option)
         for option in options:
-            self.append_item(PickerItem("WHITE", option, self))
+            self.append_item(PickerItem("NORMAL", option, self))
 
     def gather_selections(self):
         """
