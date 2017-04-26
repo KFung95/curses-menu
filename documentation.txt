@@ -18,9 +18,14 @@ tox==2.3.1
 virtualenv==14.0.6
 
 Manual Installation Requirements:
-behave
+behave 1.2.6.dev0
 
-Instructions to run on Windows:
+Instructions to install behave 1.2.6.dev0 on Windows:
+1. Add Python to PATH
+2. Add Git to PATH
+3. Enter command "pip install git+https://github.com/behave/behave"
+
+Instructions to install curses on Windows:
 1. Visit http://www.lfd.uci.edu/~gohlke/pythonlibs/#curses
 2. Download the correct version of curses (Ex: "curses‑2.2‑cp36‑cp36m‑win32.whl" for Python 3.6 32-bit)
 3. On command line, change directory to your download location
