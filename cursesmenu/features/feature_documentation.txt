@@ -3,6 +3,7 @@ Curses-Menu Gherkin Tests
 These feature files cannot be run due to issues with behave and Python 3.6.0+.
 Python 3.5.3 works with behave, but does not allow you to install curses on Windows.
 Python 3.5.2 works with behave and curses for Windows 10. Windows 7 has problems with installing curses for Python 3.5.X.
+We have not tested Linux or Mac OSX.
 
 Please use Python 3.5.2 on Windows 10.
 
