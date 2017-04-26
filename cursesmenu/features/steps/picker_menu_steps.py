@@ -1,20 +1,20 @@
 #Craig Busch
 # -- FILE: features/steps/picker_menu_steps.py
 from behave import given, when, then, step
-from cursesmenu import curses_menu, picker_menu
+from cursesmenu import CursesMenu, PickerMenu
 
 
 @given('we have a curse menu created')
 def step_impl(context):
     context.result = None
-    context.menu = curses_menu.CursesMenu("Test Menu", "Subtitle")
+    context.menu = CursesMenu("Test Menu", "Subtitle")
     context.menu.show()
     pass
 
 
 @step('we have a PickerMenu created with a list')
 def step_impl(context):
-    context.picker_menu = picker_menu.PickerMenu(["item1", "item2", "item3"])
+    context.picker_menu = PickerMenu(["item1", "item2", "item3"])
     pass
 
 
@@ -33,7 +33,7 @@ def step_impl(context):
 @when("we hit the space bar while hovering over an unselected item")
 def step_impl(context):
     assert context.picker_menu.current_item in context.picker_menu.selections
-    context.picker_menu.toggle_item(context.picker_menu.current_item)
+    context.picker_menu.toggle_selection(context.picker_menu.current_item)
 
 
 @then("the item is now selected")

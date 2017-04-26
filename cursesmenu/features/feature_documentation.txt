@@ -1,0 +1,10 @@
+Curses-Menu Gherkin Tests
+
+These feature files cannot be run due to issues with behave and Python 3.6.0+.
+Python 3.5.3 works with behave, but does not allow you to install curses on Windows.
+Python 3.5.2 works with behave and curses for Windows.
+
+Please use Python 3.5.2
+
+(Not Complete) implementation.feature -> Implementation/demonstration of features available curses-menu
+(Not Complete) picker_menu.feature -> Multi-selection menu enhancement for curses-menu
