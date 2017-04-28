@@ -23,8 +23,8 @@ class PickerMenu(CursesMenu):
         """
         results = []
         for option in self.items:
-            if option.selected:
-                results.append(option.text.replace("[X] ", ""))
+            if option.is_selected():
+                results.append(option.get_text())
         return results
 
     @staticmethod
@@ -33,4 +33,3 @@ class PickerMenu(CursesMenu):
         Returns True for PickerMenu
         """
         return True
-

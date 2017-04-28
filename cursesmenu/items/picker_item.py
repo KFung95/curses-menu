@@ -23,3 +23,16 @@ class PickerItem(MenuItem):
         else:
             self.selected = True
             self.text = self.text.replace("[ ] ", "[X] ")
+
+    def is_selected(self):
+        """
+        Returns selected boolean
+        :return: 
+        """
+        return self.selected
+
+    def get_text(self):
+        if self.is_selected():
+            return self.text.replace("[X] ", "")
+        else:
+            return self.text.replace("[ ] ", "")
