@@ -5,6 +5,7 @@ We have not tested Linux or Mac OSX.
 
 Python 3.6.1 works with behave 1.2.6.dev0 and curses.
 Please use Python 3.6.1 with behave 1.2.6.dev0 for Windows.
+Run behave from command line or terminal.
 
-(Not Complete) implementation.feature -> Implementation/demonstration of features available curses-menu
-(Not Complete) picker_menu.feature -> Multi-selection menu enhancement for curses-menu
+implementation.feature -> Implementation/demonstration of features available for curses-menu
+picker_menu.feature -> Multi-selection menu enhancement for curses-menu
