@@ -7,7 +7,7 @@ class PickerMenu(CursesMenu):
     A menu that simplifies item creation, just give it a list of strings and it builds the menu for you
     """
 
-    def __init__(self, options, title=None, subtitle="Space = toggle, Enter = accept, q = quit", show_exit_option=False):
+    def __init__(self, options, title=None, subtitle="Space = toggle, Enter = accept, ` = quit", show_exit_option=False):
         """
         :ivar list[str] options: The list of strings this menu should be built from
         """
