@@ -450,13 +450,6 @@ class MenuItem(object):
         """
         return self.menu.returned_value
 
-    @abc.abstractmethod
-    def toggle_selection(self):
-        """
-        Abstract method in place for PickerItem.toggle_selection()
-        """
-        return
-
     def get_color(self):
         if self.color == "RED":
             return 2
@@ -474,6 +467,7 @@ class MenuItem(object):
             return 8
         else:
             return 0
+
 
 class ExitItem(MenuItem):
     """
