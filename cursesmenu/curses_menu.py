@@ -341,7 +341,7 @@ class CursesMenu(object):
         self.selected_item.action()
         self.selected_item.clean_up()
         if self.is_picker():
-            self.returned_value = self.gather_selections()
+            self.returned_value = self.get_selections()
         else:
             self.returned_value = self.selected_item.get_return()
         self.should_exit = self.selected_item.should_exit
@@ -380,14 +380,6 @@ class CursesMenu(object):
         Return false for all menu types, except for PickerMenu
         """
         return False
-
-    @abc.abstractmethod
-    def gather_selections(self):
-        """
-        Abstract method in place for PickerMenu.gather_selections()
-        :return: 
-        """
-        return
 
 
 class MenuItem(object):

@@ -15,7 +15,7 @@ class PickerMenu(CursesMenu):
         for option in options:
             self.append_item(PickerItem("NORMAL", option, self))
 
-    def gather_selections(self):
+    def get_selections(self):
         """
         A method that returns all of the base text values of selected options in a list
         :return: results

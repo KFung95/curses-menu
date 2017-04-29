@@ -77,7 +77,7 @@ def step_impl(context):
 
 @when('we enter the selections')
 def step_impl(context):
-    context.result = context.menu.gather_selections()
+    context.result = context.menu.get_selections()
     pass
 
 
