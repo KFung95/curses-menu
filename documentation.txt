@@ -49,7 +49,7 @@ Search Instructions:
 To enter search mode use the "`" key.
 This will enable the search mode and allow the user to make a case sensitive search.
 After the search term is entered, hit the enter key.
-This will direct the user to the first item. 
+This will direct the user to the first item.
 
 ExternalItem:
 -Parameters:

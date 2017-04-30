@@ -297,6 +297,8 @@ class CursesMenu(object):
         elif user_input == ord("q"):
             if self.is_picker():
                 self.exit()
+        elif user_input == ord("`"):
+            self.search_menu()
 
         return user_input
 
@@ -379,6 +381,32 @@ class CursesMenu(object):
         """
         return False
 
+    def search_menu(self):
+        self.pause()
+        curses.def_prog_mode()
+        clear_terminal()
+        self.clear_screen()
+
+        search_term = input("Enter a search term: ")
+        match = self.find_first_match(search_term)
+
+        self.go_to(match)
+        self.draw()
+
+        self.clear_screen()
+        curses.reset_prog_mode()
+        curses.curs_set(1)
+        curses.curs_set(0)
+        self.resume()
+
+    def find_first_match(self, search_term):
+        index = 0
+        for item in self.items:
+            if search_term in item.text:
+                return index
+            index += 1
+        return 0
+    
 
 class MenuItem(object):
     """
