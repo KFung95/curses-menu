@@ -45,6 +45,12 @@ CommandItem:
     -arguments (list[str]) - Optional list of string arguments to be passed to the command
     -exit_status (int) -  exist status, defaults to None if it hasn't run yet
 
+Search Instructions:
+To enter search mode use the "`" key.
+This will enable the search mode and allow the user to make a case sensitive search.
+After the search term is entered, hit the enter key.
+This will direct the user to the first item. 
+
 ExternalItem:
 -Parameters:
     -color (str) - Color of the text
@@ -70,3 +76,4 @@ PickerMenu:
     -text (str) - Command description
     -picker_menu - Selectable menu items of picker menu
     -parent_menu - Parent Menu
+
