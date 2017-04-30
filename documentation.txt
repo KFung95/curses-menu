@@ -35,3 +35,38 @@ Run instructions:
 1. Navigate to your curses-menu directory via terminal or command line
 2. Type "python curses_menu_implementation.py"
 3. Hit enter
+
+Color instructions:
+To allow for the change of color, color parameters have been added to each of the following function calls.
+CommandItem:
+-Parameters:
+    -color (str) - Color of the text
+    -text (str) - Command description
+    -arguments (list[str]) - Optional list of string arguments to be passed to the command
+    -exit_status (int) -  exist status, defaults to None if it hasn't run yet
+
+ExternalItem:
+-Parameters:
+    -color (str) - Color of the text
+    -text (str) - Command description
+
+FunctionItem:
+-Parameters:
+    -color (str) - Color of the text
+    -text (str) - Command description
+    -function - Function to be called
+    -arguments (list[str]) - Optional list of string arguments to be passed to the command
+
+SubmenuItem:
+-Parameters:
+    -color (str) - Color of the text
+    -text (str) - Command description
+    -submenu - Menu Items of the submenu
+    -parent_menu - Parent Menu
+
+PickerMenu:
+-Parameters:
+    -color (str) - Color of the text
+    -text (str) - Command description
+    -picker_menu - Selectable menu items of picker menu
+    -parent_menu - Parent Menu
