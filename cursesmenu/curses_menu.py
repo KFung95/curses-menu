@@ -23,6 +23,7 @@ class CursesMenu(object):
         when the menu is started
         :ivar items: The list of MenuItems that the menu will display
         :vartype items: list[:class:`MenuItem<cursesmenu.items.MenuItem>`]
+        :ivar dictionary: dictionary of menu inputs
         :ivar CursesMenu parent: The parent of this menu
         :ivar CursesMenu previous_active_menu: the previously active menu to be restored into the class's \
         currently active menu
@@ -45,6 +46,7 @@ class CursesMenu(object):
         self.show_exit_option = show_exit_option
 
         self.items = list()
+        self.dictionary = {}
 
         self.parent = None
 
@@ -337,6 +339,7 @@ class CursesMenu(object):
         Select the current item and run it
         """
         self.selected_option = self.current_option
+        self.dictionary[self.title] = self.selected_item.text
         self.selected_item.set_up()
         self.selected_item.action()
         self.selected_item.clean_up()
@@ -347,6 +350,7 @@ class CursesMenu(object):
         self.should_exit = self.selected_item.should_exit
 
         if not self.should_exit:
+            self.dictionary[self.selected_item.text] = self.returned_value
             self.draw()
 
     def exit(self):
@@ -406,7 +410,15 @@ class CursesMenu(object):
                 return index
             index += 1
         return 0
-    
+
+    def write_dictionary(self):
+        """
+        Write Dictionary to file
+        """
+        file = open("results.txt", 'w')
+        file.write(str(self.dictionary))
+        file.close()
+
 
 class MenuItem(object):
     """
@@ -459,7 +471,7 @@ class MenuItem(object):
         """
         Override to add any cleanup actions necessary for the item
         """
-        pass
+        self.menu.write_dictionary()
 
     def get_return(self):
         """
