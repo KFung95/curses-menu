@@ -31,11 +31,11 @@ def start_hci():
     app.MainLoop()
 
 if __name__ == "__main__":
-    use_wx_with_curses = True  # combine wxpython and curses or not
+    menu = CursesMenu("Version 0.1", "Debug HCI")
+    menu.show()
 
-    if use_wx_with_curses:
-        menu = CursesMenu("Version 0.1", "Debug HCI")
-        menu.append_item(FunctionItem("WHITE","Start HCI", start_hci))
+    if menu.is_running():
         menu.show()
     else:
-        start_hci()
+        menu.append_item(FunctionItem("WHITE", "Start HCI", start_hci))
+        menu.show()
