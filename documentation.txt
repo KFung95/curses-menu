@@ -20,6 +20,8 @@ virtualenv==14.0.6
 Manual Installation Requirements:
 behave==1.2.6.dev0
 
+*** PLEASE USE PYTHON 3.6.1 ***
+
 Instructions to install behave 1.2.6.dev0 on Windows:
 1. Add Python to PATH
 2. Add Git to PATH
@@ -41,6 +43,13 @@ To enter search mode use the "`" key.
 This will enable the search mode and allow the user to make a case sensitive search.
 After the search term is entered, hit the enter key.
 This will direct the user to the first matching item.
+
+Dictionary Mapping Feature:
+Initialize dictionary with the menu
+With any selection, key = menu title and value = selected item
+After item exit
+Key = selected item and value = returned value
+Write dictionary to results.txt
 
 Color Instructions:
 To allow for the change of color, color parameters have been added to each of the following function calls.
