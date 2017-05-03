@@ -496,7 +496,7 @@ class MenuItem(object):
         elif self.color == "WHITE":
             return 8
         else:
-            return 0
+            return 8
 
 
 class ExitItem(MenuItem):
