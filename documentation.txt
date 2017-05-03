@@ -36,7 +36,7 @@ Run instructions:
 2. Type "python curses_menu_implementation.py"
 3. Hit enter
 
-Color instructions:
+Color implmentation instructions:
 To allow for the change of color, color parameters have been added to each of the following function calls.
 CommandItem:
 -Parameters:
@@ -77,3 +77,5 @@ PickerMenu:
     -picker_menu - Selectable menu items of picker menu
     -parent_menu - Parent Menu
 
+Current Issues:
+1. Please do not use wxWidget with Curses Menu. There is an issue with threading when wxWidget tries to exit and return to the parent menu.

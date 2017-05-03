@@ -1,3 +1,4 @@
+#From /u/sevaader
 import wx
 
 from cursesmenu import *

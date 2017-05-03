@@ -15,7 +15,7 @@ def step_impl(context):
 def step_impl(context):
     context.menu_item = MenuItem("RED", "Menu Item")
 
-@then("color should be red")
+@then("the text color should be red")
 def step_impl(context):
     assert context.menu_item.color is 2
 
