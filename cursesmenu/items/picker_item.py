@@ -1,5 +1,6 @@
 from cursesmenu.items import MenuItem
 
+
 class PickerItem(MenuItem):
     """
     The item type used in :class:`cursesmenu.SelectionMenu`
