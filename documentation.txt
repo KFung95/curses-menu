@@ -51,6 +51,13 @@ This will enable the search mode and allow the user to make a case sensitive sea
 After the search term is entered, hit the enter key.
 This will direct the user to the first item.
 
+Dictionary Input Mapping:
+Initialize dictionary with menu
+Any selection, key = menu title value = selected item
+after item exit
+key = selected item value = returned value
+Write dictionary to results.txt
+
 ExternalItem:
 -Parameters:
     -color (str) - Color of the text
