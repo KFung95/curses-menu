@@ -18,7 +18,7 @@ tox==2.3.1
 virtualenv==14.0.6
 
 Manual Installation Requirements:
-behave 1.2.6.dev0
+behave==1.2.6.dev0
 
 Instructions to install behave 1.2.6.dev0 on Windows:
 1. Add Python to PATH
@@ -27,34 +27,35 @@ Instructions to install behave 1.2.6.dev0 on Windows:
 
 Instructions to install curses on Windows:
 1. Visit http://www.lfd.uci.edu/~gohlke/pythonlibs/#curses
-2. Download the correct version of curses (Ex: "curses‑2.2‑cp36‑cp36m‑win32.whl" for Python 3.6 32-bit)
+2. Download the correct version of curses (Ex: "curses-2.2-cp36-cp36m-win32.whl" for Python 3.6 32-bit)
 3. On command line, change directory to your download location
-4. Run command "pip install [INSERT FILE NAME HERE]" (Ex: "pip install curses‑2.2‑cp36‑cp36m‑win32.whl")
+4. Run command "pip install [INSERT FILE NAME HERE]" (Ex: "pip install curses-2.2-cp36-cp36m-win32.whl")
 
-Run instructions:
+Run Instructions:
 1. Navigate to your curses-menu directory via terminal or command line
 2. Type "python curses_menu_implementation.py"
 3. Hit enter
 
-Color implmentation instructions:
+Search Instructions:
+To enter search mode use the "`" key.
+This will enable the search mode and allow the user to make a case sensitive search.
+After the search term is entered, hit the enter key.
+This will direct the user to the first matching item.
+
+Color Instructions:
 To allow for the change of color, color parameters have been added to each of the following function calls.
+
+ExternalItem:
+-Parameters:
+    -color (str) - Color of the text
+    -text (str) - Command description
+
 CommandItem:
 -Parameters:
     -color (str) - Color of the text
     -text (str) - Command description
     -arguments (list[str]) - Optional list of string arguments to be passed to the command
     -exit_status (int) -  exist status, defaults to None if it hasn't run yet
-
-Search Instructions:
-To enter search mode use the "`" key.
-This will enable the search mode and allow the user to make a case sensitive search.
-After the search term is entered, hit the enter key.
-This will direct the user to the first item.
-
-ExternalItem:
--Parameters:
-    -color (str) - Color of the text
-    -text (str) - Command description
 
 FunctionItem:
 -Parameters:
@@ -68,13 +69,6 @@ SubmenuItem:
     -color (str) - Color of the text
     -text (str) - Command description
     -submenu - Menu Items of the submenu
-    -parent_menu - Parent Menu
-
-PickerMenu:
--Parameters:
-    -color (str) - Color of the text
-    -text (str) - Command description
-    -picker_menu - Selectable menu items of picker menu
     -parent_menu - Parent Menu
 
 Current Issues:
