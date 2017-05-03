@@ -44,6 +44,13 @@ This will enable the search mode and allow the user to make a case sensitive sea
 After the search term is entered, hit the enter key.
 This will direct the user to the first matching item.
 
+Dictionary Mapping Feature:
+Initialize dictionary with the menu
+With any selection, key = menu title and value = selected item
+After item exit
+Key = selected item and value = returned value
+Write dictionary to results.txt
+
 Color Instructions:
 To allow for the change of color, color parameters have been added to each of the following function calls.
 
