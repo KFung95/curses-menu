@@ -11,12 +11,12 @@ Feature: Select the First Matching Menu Item
   Scenario: The user types one letter
     Given The user types only one letter
     When The letter is typed
-    Then The menu will show the first matching item
+    Then The menu will go to the first matching item
 
   Scenario: The user types one word
     Given The user types a single word
     When The word is inputted into the search
-    Then The menu will show the first matching item
+    Then The menu will highlight the first matching item
 
   Scenario: The user types a whole phrase
     Given The user types a phrase
@@ -26,4 +26,4 @@ Feature: Select the First Matching Menu Item
   Scenario: The user types a number
     Given The user inputs a number
     When The number is inputted into the search
-    Then The menu will show the first matching item
+    Then The menu will redraw and show the first matching item

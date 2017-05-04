@@ -51,7 +51,7 @@ def step_impl(context, string):
     context.tests_input = string
     pass  # input is a string of one letter
 
-@then("The menu will show the first matching item")
+@then("The menu will go to the first matching item")
 def step_impl(context):
     """
     :type context behave.runner.Context
@@ -77,7 +77,7 @@ def step_impl(context, string):
     context.tests_input = string
     pass  # input is a string of one word
 
-@then("The menu will show the first matching item")
+@then("The menu will highlight the first matching item")
 def step_impl(context):
     """
     :type context behave.runner.Context
@@ -128,7 +128,7 @@ def step_impl(context, string):
     context.tests_input = string
     pass  # input is a string of numbers
 
-@then("The menu will show the first matching item")
+@then("The menu will redraw and show the first matching item")
 def step_impl(context):
     """
     :type context behave.runner.Context
